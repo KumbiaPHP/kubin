@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="<?php echo APP_CHARSET ?>">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>KuBin - Powered by KumbiaPHP</title>
+
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="" />
+    
+        <meta property="og:title" content="" />
+        <meta property="og:description" content="" />
+        <meta property="og:image" content="<?php echo PUBLIC_PATH ;?>img/fb-image.jpg" />
+        <meta property="og:url" content="<?php echo PUBLIC_PATH ;?>" />
+        <meta property="og:site_name" content="" />
+
+        <link rel="shortcut icon" href="<?php echo PUBLIC_PATH ;?>img/favicon.ico" />
+    
+        <meta name="viewport" content="width=device-width"/>
+    
+        <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+        <?php Tag::css('fluidable-min') ?>
+        <?php Tag::css('codemirror/codemirror') ?>
+        <?php Tag::css('codemirror/addon/display/fullscreen') ?>
+        <?php Tag::css('codemirror/theme/monokai') ?>
+        <?php Tag::css('estilos') ?>
+        <?php echo Html::includeCss() ?>
+    </head>
+    
+    
+    <body id="<?php echo (isset($menu)) ? $menu : ''; ?>">
+        <div id="wrap" class="container">
+
+            <div class="col-group header">  
+                <div class="col-2 col-dt-2">
+                    <h1>KuBin</h1>
+                </div>
+                <div class="col-10 col-dt-10">
+                    <nav>
+                        <?php echo Html::link("", "Nuevo", 'class="btn menu"'); ?>
+    
+                        <?php if ($menu == "ver") : ?>
+                        <?php echo Html::link("nueva-version/" . $paste->id, "Nueva versión", 'class="btn menu"'); ?>
+                        <?php endif;?>
+                        
+                    </nav>
+                </div>
+            </div>
+    
+            <div class="col-group">
+                <?php View::content(); ?>
+            </div>
+        </div>
+        
+        <div class="container">
+            <footer>
+                <?php View::partial("footer"); ?>
+            </footer>
+        </div>
+    
+        <?php echo Tag::js("codemirror/codemirror"); ?>
+        <?php echo Tag::js("codemirror/mode/javascript/javascript"); ?>
+        <?php echo Tag::js("codemirror/mode/php/php"); ?>
+        <?php echo Tag::js("codemirror/mode/css/css"); ?>
+        <?php echo Tag::js("codemirror/mode/sql/sql"); ?>
+        <?php echo Tag::js("codemirror/mode/htmlembedded/htmlembedded"); ?>
+        <?php echo Tag::js("codemirror/mode/htmlmixed/htmlmixed"); ?>
+
+        <?php echo Tag::js("codemirror/addon/display/fullscreen"); ?>
+        <?php echo Tag::js("codemirror/addon/edit/closebrackets"); ?>
+        <?php echo Tag::js("codemirror/addon/edit/matchtags"); ?>
+        <?php echo Tag::js("codemirror/addon/selection/active-line"); ?>
+
+        <?php echo Tag::js("app"); ?>
+    </body>
+</html>

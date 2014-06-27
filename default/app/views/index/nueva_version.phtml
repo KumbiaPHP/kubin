@@ -1,0 +1,11 @@
+<?php echo Form::open(); ?>
+<div class="col12">
+    <?php View::content(); ?>
+
+    <?php echo Form::textarea("paste.post", 'autofocus wrap="off" cols="50" rows="10"'); ?>
+</div>
+
+<?php echo Form::hidden("paste.paste_id", NULL, $paste->id); ?>
+
+<?php echo Form::submit("Guardar", 'class="btn guardar azul"'); ?>
+<?php echo Form::close(); ?>

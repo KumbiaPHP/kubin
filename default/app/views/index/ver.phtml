@@ -1,0 +1,8 @@
+<div class="col12">
+    <?php View::content(); ?>
+<?php //setlocale(LC_ALL,"es_AR.utf8"); ?>
+    <p class="publicado">Publicado el <?php echo strftime("%A, %d de %B de %Y a las %H:%M:%S"); ?></p>
+    <?php echo Form::textarea("paste.post", 'autofocus wrap="off" cols="50" rows="10"'); ?>
+
+    <?php //echo Form::submit("Guardar", 'class="btn"'); ?>
+</div>

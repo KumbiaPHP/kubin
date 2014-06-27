@@ -1,0 +1,9 @@
+<?php echo Form::open(); ?>
+<div class="col-mb-12 col-12 col-dt-12">
+	<?php View::content(); ?>
+
+	<?php echo Form::textarea("paste.post", 'autofocus wrap="off" cols="50" rows="10"'); ?>
+</div>
+
+<?php echo Form::submit("Guardar", 'class="btn azul guardar"'); ?>
+<?php echo Form::close(); ?>

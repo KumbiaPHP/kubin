@@ -1,0 +1,8 @@
+<div class="col-group">
+    <div class="col-4 col-dt-4">
+        <?php echo Html::img("kumbiaphp.png", "Hecho con KumbiaPHP"); ?>
+    </div>
+    <div class="col-8 col-dt-8">
+        <p><?php echo 'Tiempo: '.round((microtime(1)-START_TIME),4).' seg.'; echo ', Memoria Usada: '.number_format(memory_get_usage() / 1048576, 2).' MB';?></p>
+    </div>
+</div>
