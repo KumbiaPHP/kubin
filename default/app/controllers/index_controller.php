@@ -17,7 +17,7 @@ class IndexController extends AppController
 
             if ($paste->save()){
                 Flash::success("KuPaste creado!");
-                return Router::redirect("ver/" . $paste->id);
+                return Redirect::to("ver/" . $paste->id);
             }
         }
     }
@@ -32,14 +32,14 @@ class IndexController extends AppController
 
             if ($paste->save()){
                 Flash::success("KuPaste creado!");
-                return Router::redirect("ver/" . $paste->id);
+                return Redirect::to("ver/" . $paste->id);
             }
         }else{
             if ($id !== NULL){
                 $paste = new Paste();       
                 $this->paste = $paste->find($id);
             }else{
-                return Router::redirect("/");
+                return Redirect::to("/");
             }
         }
     }
